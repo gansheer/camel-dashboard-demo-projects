@@ -2,6 +2,9 @@
 
 location=$(dirname $0)
 
+echo 'Add camel-dashboard-operator CRD'
+kubectl apply -k 'github.com/squakez/camel-dashboard-operator/pkg/resources/config/crd?ref=main'
+
 echo 'Clean projects'
 oc delete project camel-demo-1
 oc delete project camel-demo-2
@@ -34,3 +37,8 @@ echo 'Deploy camel-cronjob'
 pushd $location/camel-cronjob
 ./mvnw clean package -Dquarkus.openshift.deploy=true
 popd
+
+
+
+echo 'Create camel-dashboard-operator CR'
+echo 'TODO'

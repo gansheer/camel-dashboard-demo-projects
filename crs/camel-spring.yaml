@@ -1,0 +1,42 @@
+apiVersion: camel.apache.org/v1alpha1
+kind: App
+metadata:
+  annotations:
+    camel.apache.org/imported-from-kind: Deployment
+    camel.apache.org/imported-from-name: camel-spring
+    camel.apache.org/is-synthetic: "true"
+  creationTimestamp: "2025-04-10T15:44:37Z"
+  generation: 1
+  name: camel-spring
+  namespace: camel-demo-2
+  ownerReferences:
+  - apiVersion: apps/v1
+    controller: true
+    kind: Deployment
+    name: camel-spring
+    uid: 72d07164-f1f0-4441-b23f-df890fc2d3ed
+  resourceVersion: "95694"
+  uid: 119198c5-4da6-41f1-bceb-477ad9464379
+spec: {}
+status:
+  image: image-registry.openshift-image-registry.svc:5000/camel-demo-2/camel-spring@sha256:84d62c84dd402d9ebacbb235a837e9931ff48b2331ae1c022e09c6040db50a9d
+  phase: Running
+  pods:
+  - internalIp: 10.217.0.62
+    name: camel-spring-79ff9fd7c-v95np
+    observe:
+      healthEndpoint: observe/health
+      healthPort: 8080
+      metricsEndpoint: observe/metrics
+      metricsPort: 8080
+    ready: true
+    runtime:
+      camelVersion: 4.11.0
+      exchange:
+        succeed: 111
+        total: 111
+      runtimeProvider: Spring-Boot
+      runtimeVersion: 3.4.3
+      status: UP
+    status: Running
+  replicas: 1

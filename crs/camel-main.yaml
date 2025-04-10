@@ -1,0 +1,42 @@
+apiVersion: camel.apache.org/v1alpha1
+kind: App
+metadata:
+  annotations:
+    camel.apache.org/imported-from-kind: Deployment
+    camel.apache.org/imported-from-name: camel-main
+    camel.apache.org/is-synthetic: "true"
+  creationTimestamp: "2025-04-10T15:42:50Z"
+  generation: 1
+  name: camel-main
+  namespace: camel-demo-1
+  ownerReferences:
+  - apiVersion: apps/v1
+    controller: true
+    kind: Deployment
+    name: camel-main
+    uid: 4c1acaef-ce9a-45ab-878b-658df886f8da
+  resourceVersion: "95682"
+  uid: 51d6041a-55c2-40f6-bf6b-7a0d70bf2fc8
+spec: {}
+status:
+  image: image-registry.openshift-image-registry.svc:5000/camel-demo-1/camel-main@sha256:a44af1d2f91a6ce3bc89ba14dc3d83e4c2b80538e3ce4be1bb3a4c67a04cfdb9
+  phase: Running
+  pods:
+  - internalIp: 10.217.0.49
+    name: camel-main-67ddb4f4d5-pbwb2
+    observe:
+      healthEndpoint: observe/health
+      healthPort: 8080
+      metricsEndpoint: observe/metrics
+      metricsPort: 8080
+    ready: true
+    runtime:
+      camelVersion: 4.11.0
+      exchange:
+        succeed: 216
+        total: 216
+      runtimeProvider: Main
+      runtimeVersion: 4.11.0
+      status: UP
+    status: Running
+  replicas: 1
