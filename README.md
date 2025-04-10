@@ -24,6 +24,12 @@ docker login -u kubeadmin -p $(oc whoami -t) default-route-openshift-image-regis
 ./mvnw clean package oc:deploy
 ```
 
+## camel-spring deploy
+
+```sh
+./mvnw clean package oc:deploy
+```
+
 ## Troubleshoot
 
 This camel-main can't be deployed in the same Openshift project as the other (at least quarkus ones). This results in failure of the other projects:
