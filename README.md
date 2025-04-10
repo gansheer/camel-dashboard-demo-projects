@@ -1,20 +1,28 @@
 # Demo projects
 
 Login to docker/podman
+```sh
 podman login --tls-verify=false -u kubeadmin -p $(oc whoami -t) default-route-openshift-image-registry.apps-crc.testing
 docker login -u kubeadmin -p $(oc whoami -t) default-route-openshift-image-registry.apps-crc.testing
+```
 
 ## camel-cronjob deploy
 
+```sh
 ./mvnw package -Dquarkus.openshift.deploy=true
+```
 
 ## camel-main deploy
 
+```sh
 ./mvnw clean package oc:deploy
+```
 
 ## camel-quarkus deploy
 
+```sh
 ./mvnw clean package oc:deploy
+```
 
 ## Troubleshoot
 
