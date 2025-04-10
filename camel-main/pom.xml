@@ -3,7 +3,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example.project</groupId>
+    <groupId>org.demo.camel</groupId>
     <artifactId>camel-main</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -103,7 +103,7 @@
                 <artifactId>camel-maven-plugin</artifactId>
                 <version>4.11.0</version>
                 <configuration>
-                    <mainClass>org.example.project.camelmain.CamelApplication</mainClass>
+                    <mainClass>org.demo.camel.CamelApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
@@ -124,7 +124,7 @@
                     </descriptors>
                     <archive>
                         <manifest>
-                            <mainClass>org.example.project.camelmain.CamelApplication</mainClass>
+                            <mainClass>org.demo.camel.CamelApplication</mainClass>
                         </manifest>
                         <manifestEntries>
                             <Multi-Release>true</Multi-Release>

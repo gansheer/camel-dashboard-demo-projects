@@ -4,7 +4,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example.project</groupId>
+    <groupId>org.demo.camel</groupId>
     <artifactId>camel-quarkus</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -76,7 +76,7 @@
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-micrometer</artifactId>
-            <version>4.11.0-SNAPSHOT</version>
+            <version>4.11.0</version>
         </dependency>
 
         <dependency>

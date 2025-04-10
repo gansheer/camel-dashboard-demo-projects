@@ -1,4 +1,4 @@
-package org.example.project.camelmain;
+package org.demo.camel;
 
 import org.apache.camel.main.Main;
 
