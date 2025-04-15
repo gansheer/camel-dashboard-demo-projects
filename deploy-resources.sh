@@ -11,11 +11,11 @@ echo 'Create camel-dashboard-operator CR'
 kubectl apply -n camel-demo-2 -f $location/crs/camel-spring-camel-demo-2.yml
 kubectl patch apps.camel.apache.org camel-spring -n camel-demo-2 --patch-file $location/crs/camel-spring-camel-demo-2.yml  --type=merge --subresource='status'
 
-./crs/generate_crs.py 'camel-quarkus' 'camel-demo-2' '4.11.0' 'Quarkus' '3.20.0'
+./crs/generate_crs.py 'camel-quarkus' 'camel-demo-2' '4.11.1' 'Quarkus' '3.20.0'
 kubectl apply -n camel-demo-2 -f $location/crs/camel-quarkus-camel-demo-2.yml
 kubectl patch apps.camel.apache.org camel-quarkus -n camel-demo-2 --patch-file $location/crs/camel-quarkus-camel-demo-2.yml  --type=merge --subresource='status'
 
-./crs/generate_crs.py 'camel-main' 'camel-demo-1' '4.11.0' 'Main' '4.11.0'
+./crs/generate_crs.py 'camel-main' 'camel-demo-1' '4.10.3' 'Main' '4.10.3'
 kubectl apply -n camel-demo-1 -f $location/crs/camel-main-camel-demo-1.yml
 kubectl patch apps.camel.apache.org camel-main -n camel-demo-1 --patch-file $location/crs/camel-main-camel-demo-1.yml  --type=merge --subresource='status'
 
