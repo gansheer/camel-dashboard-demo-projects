@@ -2,26 +2,29 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app.kubernetes.io/name: camel-spring
-    camel.apache.org/app: camel-spring
+    app.kubernetes.io/name: camel-spring-jolokia
+    camel.apache.org/app: camel-spring-jolokia
     app.kubernetes.io/runtime: camel
     camel/integration-runtime: camel
     app.openshift.io/runtime: camel
-  name: camel-spring
+  name: camel-spring-jolokia
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/name: camel-spring
+      app.kubernetes.io/name: camel-spring-jolokia
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: camel-spring
+        app.kubernetes.io/name: camel-spring-jolokia
     spec:
       containers:
-      - name: camel-spring
+      - name: camel-spring-jolokia
         ports:
         - containerPort: 8080
           name: http
+          protocol: TCP
+        - containerPort: 8778
+          name: jolokia
           protocol: TCP
         - containerPort: 9779
           name: prometheus

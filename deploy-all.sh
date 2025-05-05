@@ -31,6 +31,12 @@ pushd $location/camel-spring
 ./mvnw clean package oc:deploy
 popd
 
+echo 'Deploy camel-spring-jolokia'
+oc project camel-demo-2
+pushd $location/camel-spring-jolokia
+./mvnw clean package oc:deploy
+popd
+
 echo 'Deploy camel-cronjob'
 oc project camel-demo-2
 pushd $location/camel-cronjob
