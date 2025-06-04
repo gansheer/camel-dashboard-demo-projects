@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    camel/camel-core-version: 4.11.0-SNAPSHOT
   labels:
     app.kubernetes.io/name: camel-quarkus
-    camel/integration-runtime: camel
+    camel.apache.org/app: camel-quarkus
     app.kubernetes.io/runtime: camel
+    camel/integration-runtime: camel
+    app.openshift.io/runtime: camel
   name: camel-quarkus
 spec:
   ports:
