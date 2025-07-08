@@ -1,12 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    camel.apache.org/observability-services-port: "8080"
   labels:
     app.kubernetes.io/name: camel-spring
-    camel.apache.org/app: camel-spring
     app.kubernetes.io/runtime: camel
-    camel/integration-runtime: camel
     app.openshift.io/runtime: camel
+    camel/integration-runtime: camel
+    camel.apache.org/app: camel-spring
   name: camel-spring
 spec:
   selector:
