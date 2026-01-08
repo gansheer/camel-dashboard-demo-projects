@@ -2,7 +2,7 @@
     from:
       uri: timer:yaml
       parameters:
-        period: "15000"
+        period: "20000"
       steps:
         - setBody:
             simple: Hello Camel from ${routeId}
