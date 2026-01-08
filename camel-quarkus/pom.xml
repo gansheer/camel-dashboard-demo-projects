@@ -12,18 +12,18 @@
         <project.build.outputTimestamp>2025-05-27T11:49:36Z</project.build.outputTimestamp>
         <compiler-plugin.version>3.13.0</compiler-plugin.version>
         <failsafe.useModulePath>false</failsafe.useModulePath>
-        <maven.compiler.release>17</maven.compiler.release>
+        <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
-        <quarkus.platform.version>3.20.0</quarkus.platform.version>
+        <quarkus.platform.version>3.30.1</quarkus.platform.version>
         <jkube.image.name>camel-quarkus:1.0-SNAPSHOT</jkube.image.name>
         <jkube.container-image.name>camel-quarkus:1.0-SNAPSHOT</jkube.container-image.name>
         <jkube.skip.push>false</jkube.skip.push>
         <jkube.build.switchToDeployment>true</jkube.build.switchToDeployment>
         <jkube.maven.plugin>openshift-maven-plugin</jkube.maven.plugin>
-        <jkube.container-image.from>eclipse-temurin:17</jkube.container-image.from>
+        <jkube.container-image.from>eclipse-temurin:21</jkube.container-image.from>
         <jkube.build.strategy>docker</jkube.build.strategy>
         <jkube.version>1.18.1</jkube.version>
         <quarkus.smallrye-health.root-path>/observe/health</quarkus.smallrye-health.root-path>
@@ -74,7 +74,7 @@
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-micrometer</artifactId>
-            <version>4.11.0</version>
+            <version>4.16.0</version>
         </dependency>
 
         <dependency>
