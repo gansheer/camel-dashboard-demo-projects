@@ -1,8 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    camel.apache.org/observability-services-port: "8080"
   labels:
     app.kubernetes.io/name: camel-main
     app.kubernetes.io/runtime: camel
