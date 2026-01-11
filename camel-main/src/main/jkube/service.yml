@@ -13,7 +13,11 @@ spec:
   - name: http
     port: 80
     protocol: TCP
-    targetPort: http
+    targetPort: http  
+  - name: management
+    port: 9876
+    protocol: TCP
+    targetPort: management
   selector:
     app.kubernetes.io/name: camel-main
   type: ClusterIP

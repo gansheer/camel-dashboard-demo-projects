@@ -23,3 +23,6 @@ spec:
         - containerPort: 8080
           name: http
           protocol: TCP
+        - containerPort: 9876
+          name: management
+          protocol: TCP

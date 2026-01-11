@@ -6,7 +6,9 @@ echo 'Clean projects'
 oc delete project camel-demo-1
 oc delete project camel-demo-2
 oc new-project camel-demo-1
+oc label namespace camel-demo-1 openshift.io/user-monitoring=true
 oc new-project camel-demo-2
+oc label namespace camel-demo-2 openshift.io/user-monitoring=true
 oc project default
 
 #podman login --tls-verify=false -u kubeadmin -p $(oc whoami -t) default-route-openshift-image-registry.apps-crc.testing
