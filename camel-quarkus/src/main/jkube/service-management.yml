@@ -7,13 +7,14 @@ metadata:
     app.kubernetes.io/runtime: camel
     camel/integration-runtime: camel
     app.openshift.io/runtime: camel
-  name: camel-quarkus
+    app.kubernetes.io/component: management
+  name: camel-quarkus-management
 spec:
   ports:
-  - name: http
-    port: 80
+  - name: management
+    port: 9876
     protocol: TCP
-    targetPort: http
+    targetPort: 9876
   selector:
     app.kubernetes.io/name: camel-quarkus
   type: ClusterIP

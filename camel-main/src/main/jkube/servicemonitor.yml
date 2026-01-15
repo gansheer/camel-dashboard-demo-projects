@@ -1,14 +1,15 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: camel-quarkus-metrics
+  name: camel-main-metrics
   labels:
-    app: camel-main
+    app.kubernetes.io/name: camel-main
     openshift.io/user-monitoring: "true"
 spec:
   selector:
     matchLabels:
-      app: camel-quarkus
+      app.kubernetes.io/name: camel-main
+      app.kubernetes.io/component: management
   endpoints:
   - port: management
     path: /observe/metrics
