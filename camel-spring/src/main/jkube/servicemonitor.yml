@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: camel-spring-metrics
+  labels:
+    app: camel-spring
+    openshift.io/user-monitoring: "true"
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: camel-spring
+      app.kubernetes.io/component: management
+  endpoints:
+  - port: management
+    path: /observe/metrics
+    scheme: http
+    interval: 30s
