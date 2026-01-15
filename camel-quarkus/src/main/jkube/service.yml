@@ -10,10 +10,10 @@ metadata:
   name: camel-quarkus
 spec:
   ports:
-  - name: http
-    port: 80
+  - name: management
+    port: 9876
     protocol: TCP
-    targetPort: http
+    targetPort: 9876
   selector:
     app.kubernetes.io/name: camel-quarkus
   type: ClusterIP

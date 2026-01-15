@@ -1,8 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    camel.apache.org/observability-services-port: "8080"
   labels:
     app.kubernetes.io/name: camel-quarkus
     app.kubernetes.io/runtime: camel
@@ -20,8 +18,7 @@ spec:
         app.kubernetes.io/name: camel-quarkus
     spec:
       containers:
-      - image: camel-quarkus:1.0-SNAPSHOT
-        name: camel-quarkus
+      - name: camel-quarkus
         ports:
         - containerPort: 8080
           name: http

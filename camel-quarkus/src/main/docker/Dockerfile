@@ -16,28 +16,11 @@
 #
 
 ####
-# This Dockerfile is used in order to build a container that runs the Quarkus application in JVM mode
+# This Dockerfile is used in order to build a container that runs the Camel application
 #
-# Before building the container image run:
-#
-# ./mvnw package
-#
-# Then, build the image with:
-#
-# docker build -f src/main/docker/Dockerfile.jvm -t quarkus/code-with-quarkus-jvm .
-#
-# Then run the container using:
-#
-# docker run -i --rm -p 8080:8080 quarkus/code-with-quarkus-jvm
-#
-# If you want to include the debug port into your docker image
-# you will have to expose the debug port (default 5005 being the default) like this :  EXPOSE 8080 5005.
-# Additionally you will have to set -e JAVA_DEBUG=true and -e JAVA_DEBUG_PORT=*:5005
-# when running the container
-#
-# Then run the container using :
-#
-# docker run -i --rm -p 8080:8080 quarkus/code-with-quarkus-jvm
+# ./mvnw clean package
+# docker build -f src/main/docker/Dockerfile -t camel-quarkus:1.0-SNAPSHOT .
+# docker run -it camel-quarkus:1.0-SNAPSHOT
 #
 # This image uses the `run-java.sh` script to run the application.
 # This scripts computes the command line to execute your Java application, and
@@ -93,22 +76,22 @@
 # - NO_PROXY: A comma separated lists of hosts, IP addresses or domains that can be
 #   accessed directly. (example: "foo.example.com,bar.example.com")
 #
+# If you want to include the debug port into your docker image
+# you will have to expose the debug port (default 5005 being the default) like this :  EXPOSE 8080 5005.
+# Additionally you will have to set -e JAVA_DEBUG=true and -e JAVA_DEBUG_PORT=*:5005
+# when running the container
+#
 ###
-FROM registry.access.redhat.com/ubi8/openjdk-21:1.23
+FROM registry.access.redhat.com/ubi9/openjdk-21:1.21
 
-ENV LANGUAGE='en_US:en'
+COPY --chown=185 target/camel-quarkus-1.0-SNAPSHOT.jar /deployments/
 
-
-# We make four distinct layers so if there are application changes the library layers can be re-used
-COPY --chown=185 target/quarkus-app/lib/ /deployments/lib/
-COPY --chown=185 target/quarkus-app/*.jar /deployments/
-COPY --chown=185 target/quarkus-app/app/ /deployments/app/
-COPY --chown=185 target/quarkus-app/quarkus/ /deployments/quarkus/
-
-EXPOSE 8080
+# Uncomment to expose any given port
+# EXPOSE 8080
 USER 185
-ENV JAVA_OPTS="-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager"
-ENV JAVA_APP_JAR="/deployments/quarkus-run.jar"
+# Uncomment to provide any Java option
+# ENV JAVA_OPTS=""
+ENV JAVA_APP_JAR="/deployments/camel-quarkus-1.0-SNAPSHOT.jar"
 
 ENTRYPOINT [ "/opt/jboss/container/java/run/run-java.sh" ]
 
