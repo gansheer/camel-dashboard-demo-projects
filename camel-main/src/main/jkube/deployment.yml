@@ -26,3 +26,6 @@ spec:
         - containerPort: 9876
           name: management
           protocol: TCP
+        - containerPort: 9876
+          name: jolokia
+          protocol: TCP

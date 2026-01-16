@@ -56,7 +56,10 @@
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-observability-services</artifactId>
         </dependency>
-        
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-platform-http-jolokia</artifactId>
+        </dependency>
 
         <!-- for logging in color -->
         <dependency>
