@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: camel-quarkus
+    camel.apache.org/app: camel-quarkus
+    app.kubernetes.io/runtime: camel
+    camel/integration-runtime: camel
+    app.openshift.io/runtime: camel
+    app.kubernetes.io/component: jolokia
+  name: camel-quarkus-jolokia
+spec:
+  ports:
+  - name: jolokia
+    port: 8778
+    protocol: TCP
+    targetPort: jolokia
+  selector:
+    app.kubernetes.io/name: camel-quarkus
+  type: ClusterIP
