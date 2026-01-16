@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: camel-spring
+    camel.apache.org/app: camel-spring
+    app.kubernetes.io/runtime: camel
+    camel/integration-runtime: camel
+    app.openshift.io/runtime: camel
+    app.kubernetes.io/component: jolokia
+  name: camel-spring-jolokia
+spec:
+  ports:
+  - name: jolokia
+    port: 8778
+    protocol: TCP
+    targetPort: jolokia
+  selector:
+    app.kubernetes.io/name: camel-spring
+  type: ClusterIP
