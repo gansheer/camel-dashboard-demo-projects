@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.10</version>
+        <version>4.0.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -33,7 +33,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>3.5.10</version>
+                <version>4.0.5</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -41,7 +41,7 @@
             <dependency>
                 <groupId>org.apache.camel.springboot</groupId>
                 <artifactId>camel-spring-boot-bom</artifactId>
-                <version>4.18.4</version>
+                <version>4.20.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -88,6 +88,7 @@
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-test-spring-junit5</artifactId>
+            <version>4.20.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
