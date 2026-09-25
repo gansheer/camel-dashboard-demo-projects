@@ -17,7 +17,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
-        <quarkus.platform.version>3.20.0</quarkus.platform.version>
+        <quarkus.platform.version>3.33.3</quarkus.platform.version>
         <jkube.image.name>camel-quarkus:1.0-SNAPSHOT</jkube.image.name>
         <jkube.container-image.name>camel-quarkus:1.0-SNAPSHOT</jkube.container-image.name>
         <jkube.skip.push>false</jkube.skip.push>
@@ -27,6 +27,7 @@
         <jkube.build.strategy>docker</jkube.build.strategy>
         <jkube.version>1.18.1</jkube.version>
         <quarkus.smallrye-health.root-path>/observe/health</quarkus.smallrye-health.root-path>
+        <jkube.enricher.jkube-healthcheck-quarkus.port>9876</jkube.enricher.jkube-healthcheck-quarkus.port>
         <skipITs>true</skipITs>
         <surefire-plugin.version>3.5.2</surefire-plugin.version>
     </properties>
@@ -72,9 +73,8 @@
 
         <!-- Adding observability -->
         <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-micrometer</artifactId>
-            <version>4.11.0</version>
+            <groupId>org.apache.camel.quarkus</groupId>
+            <artifactId>camel-quarkus-micrometer</artifactId>
         </dependency>
 
         <dependency>
