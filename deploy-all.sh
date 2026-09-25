@@ -37,9 +37,9 @@ pushd $location/camel-spring-jolokia
 ./mvnw clean package oc:deploy
 popd
 
-#echo 'Deploy camel-cronjob'
-#oc project camel-demo-2
-#pushd $location/camel-cronjob
-#./mvnw clean package -Dquarkus.openshift.deploy=true
-#popd
+echo 'Deploy camel-cronjob'
+oc project camel-demo-2
+pushd $location/camel-cronjob
+./mvnw clean package -Dquarkus.openshift.deploy=true
+popd
 

@@ -33,9 +33,9 @@ pushd $location/camel-spring-jolokia
 kubectl delete -f target/kubernetes/openshift.yml
 popd
 
-#echo 'Undeploy camel-cronjob'
-#oc project camel-demo-2
-#pushd $location/camel-cronjob
-#kubectl delete -f target/kubernetes/openshift.yml
-#popd
+echo 'Undeploy camel-cronjob'
+oc project camel-demo-2
+pushd $location/camel-cronjob
+kubectl delete -f target/kubernetes/openshift.yml
+popd
 
